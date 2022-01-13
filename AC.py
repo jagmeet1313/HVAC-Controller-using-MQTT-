@@ -5,13 +5,15 @@ import math
 import sys
 import json
 import ast
+
+
 def on_connect(client, userdata, flags, rc):
 	if rc == 0:
 		print("Connected to broker")
 		global Connected  # Use global variable
 		Connected = True  # Signal connection
 	else:
-		print("Connection failed Return Code : ",rc)
+		print("Connection failed permanently",rc)
 
 
 def on_message(client, userdata, message):
